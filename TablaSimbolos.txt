@@ -1,4 +1,5 @@
 Tabla de Símbolos
+(p/graficar graphviz)
 
 Guarda todos los ID que define el usuario con sus características. Gestiona los contextos.
 

@@ -2,7 +2,7 @@ import sys
 from antlr4 import *
 from compiladoresLexer  import compiladoresLexer
 from compiladoresParser import compiladoresParser
-
+from Escucha import Escucha
 
 def main(argv):
     # archivo = "input/entrada.txt"
@@ -15,6 +15,8 @@ def main(argv):
     lexer = compiladoresLexer(input)
     stream = CommonTokenStream(lexer)
     parser = compiladoresParser(stream)
+    escucha = Escucha()
+    parser.addParseListener(escucha)
     tree = parser.programa()
     # print(tree.toStringTree(recog=parser))
 

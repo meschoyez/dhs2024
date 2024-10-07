@@ -13,7 +13,7 @@
             // Archivo a parsear
             "input": "input/opal.txt",
             // Simbolo inicial
-            "startRule": "asignacion",
+            "startRule": "programa",
             // Muestra Arbol Sintactico
             "printParseTree": true,
             "visualParseTree": true
