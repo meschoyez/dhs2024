@@ -56,12 +56,12 @@ instruccion : declaracion
             // | ifor
             // | iif
             | bloque
-            | asignacion
+            | asignacion PYC
             ;
 
 declaracion : INT ID PYC ;
 
-asignacion : ID ASIG opal PYC ;
+asignacion : ID ASIG opal ;
 
 opal : exp ; // completar
 

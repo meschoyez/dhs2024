@@ -7,7 +7,8 @@ from compiladoresParser import compiladoresParser
 def main(argv):
     # archivo = "input/entrada.txt"
     # archivo = "input/parentesis.txt"
-    archivo = "input/programa.txt"
+    # archivo = "input/programa.txt"
+    archivo = "input/opal.txt"
     if len(argv) > 1 :
         archivo = argv[1]
     input = FileStream(archivo)

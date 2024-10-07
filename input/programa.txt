@@ -6,7 +6,11 @@ int main () {
 
     y = funcion(x, 6);
     while (y > 0) {
+        int x = 0;
         y = y - 1;
+        {
+            int x = 0;
+        }
     }
 
     return 0;
@@ -14,7 +18,7 @@ int main () {
 
 
 int funcion (int a, int b) {
-    int z;
+    int x;
     z = a + b;
     return z;
 }
@@ -48,6 +52,6 @@ for (  ; i < 10;  ) {
 
 for (a = 1, b = 2; b < 20; b = 2 * a, a += 1) ;
 
-for (f = 0, c = 0; end ; c = ++c % nc) x = 0;
+for (f = 0, c = 0; f < nf ; c = ++c % nc, f = c == 0 ? f + 1  : f) x = 0;
     
 

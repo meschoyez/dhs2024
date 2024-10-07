@@ -1,0 +1,21 @@
+Tabla de Símbolos
+
+Guarda todos los ID que define el usuario con sus características. Gestiona los contextos.
+
+Acciones:
+  1- Agregar contexto
+  2- Borrar contexto
+  3- Agregar ID
+  4- Buscar ID
+  5- Buscar local ID
+
+ID :
+  1- Nombre
+  2- Tipo de dato
+  3- Inicializado
+  4- Usado
+
+Variables == ID
+
+Funciones:
+  5- Lista de argumentos
