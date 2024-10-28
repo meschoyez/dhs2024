@@ -1,0 +1,88 @@
+Código Intermedio
+
+Lenguaje independiente del Lenguaje Programación utilizado
+y de la Arquitectura de Computadora a utilizar
+
+Códigos de Tres Direcciones
+
+  x = y <op> z
+
+mov ax, bx
+add ax, bx, cx
+
+  x = y
+  jmp l
+  label l
+  ifnjmp x, l
+  push x
+  pop x
+
+Necesito:
+ - Un generador de nombres de variables temporales
+ - Un generador de nombre de etiquetas
+
+-----------------
+x = 0
+x = 2 + y
+
+x = 3 * y + (5 * z) / 2
+
+t0 = 3 * y
+t1 = 5 * z
+t2 = t1 / 2
+t3 = t0 + t2
+x  = t3
+
+--------------
+if (x > 0)
+    y = z * 2
+else
+    y = z / 2
+
+t0 = x > 0
+ifnjmp t0, l0
+t1 = z * 2
+y = t1
+jmp l1
+label l0
+t2 = z / 2
+y = t2
+label l1
+
+-------------
+for (i = 0; i < x; i = i + 1)
+    y = z * x;
+
+i = 0
+label l0
+t0 = i < x
+ifnjmp t0, l1
+t1 = z * x
+y = t1
+t2 = i + 1
+i = t2
+jmp l0
+label l1
+
+-------------
+int f (int a, int b) {
+    return a + b;
+}
+<...>  
+    x = f(o, p);
+<...>
+
+label l0
+pop t0
+pop b
+pop a
+t1 = a + b
+push t1
+jmp t0
+<...>
+push o
+push p
+push l1
+jmp l0
+label l1
+pop x

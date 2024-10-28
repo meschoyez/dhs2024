@@ -1,8 +1,15 @@
+int f1 ();
+int f1 (int a)
+int f2 (int a, int b)
+int f3 (int a, int b, int c)
+
 int funcion (int a, int b);
 
 int main () {
+    int x;
     int x = 0;
-    int a = 0, b, c = 0;
+    int a, b, c;
+    int a = 0, b = 0, c = 0;
 
     y = funcion(x, 6);
     while (y > 0) {
