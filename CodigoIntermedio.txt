@@ -86,3 +86,65 @@ push l1
 jmp l0
 label l1
 pop x
+
+****************************************
+****************************************
+Optimización de Código Intermedio
+
+x = (a * b - c) + (a * b + d)
+
+t0 = a * b
+t1 = t0 - c
+t2 = a * b
+t3 = t2 + d
+t4 = t1 + t3
+x  = t4
+
+Reemplazo de acciones repetidas
+
+t0 = a * b
+t1 = t0 - c
+t3 = t0 + d
+t4 = t1 + t3
+x = t4
+
+-----
+
+x = 5
+y = x * 2 - 10;
+z = y + x;
+
+x = 5
+t0 = x * 2
+t1 = t0 - 10
+y = t1
+t2 = y + x
+z = t2
+
+-------
+Propagación de constantes
+
+x = 5
+t0 = 5 * 2
+t1 = t0 - 10
+y = t1
+t2 = y + 5
+z = t2
+
+--
+x = 5
+t1 = 10 - 10
+y = t1
+t2 = y + 5
+z = t2
+
+--
+x = 5
+y = 0
+t2 = y + 5
+z = t2
+
+--
+x = 5
+y = 0
+z = 5
